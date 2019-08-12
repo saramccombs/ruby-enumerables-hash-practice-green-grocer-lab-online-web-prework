@@ -22,11 +22,11 @@ def apply_coupons(cart, coupons)
         if cart["#{coupon[:item]} W/COUPON"]
           cart["#{coupon[:item]} W/COUPON"][:count] += coupon[:num]
         else
-        cart["#{coupon[:item]} W/COUPON"] = {
+          cart["#{coupon[:item]} W/COUPON"] = {
           price: coupon[:cost]/coupon[:num],
           clearance: cart[coupon[:item]][:clearance],
           count: coupon[:num]
-        }
+          }
         end 
         cart[coupon[:item]][:count] -= coupon[:num]
       end
@@ -36,7 +36,12 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  # code here
+  #visit each element in the cart hash 
+  #check for clearance == TRUE
+  #lookup :price
+  #create discount_variable to hold dicsount amount
+  #update :price, :price -= discount_variable.round 
+  
 end
 
 def checkout(cart, coupons)
