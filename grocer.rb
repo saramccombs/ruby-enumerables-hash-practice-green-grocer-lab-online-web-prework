@@ -40,7 +40,7 @@ def apply_clearance(cart)
   #check for clearance == TRUE
   #lookup :price
   #create discount_variable to hold dicsount amount
-  #update :price, :price -= discount_variable.round 
+  #update :price, :price -= discount_variable.round(2)
   
 end
 
