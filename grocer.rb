@@ -41,7 +41,15 @@ def apply_clearance(cart)
   #lookup :price
   #create discount_variable to hold dicsount amount
   #update :price, :price -= discount_variable.round(2)
+  #return updated cart
   
+  cart.map do |item|
+    if item[:clearance]
+      discount_variable = item[:price] * 0.20 
+      item[:price] -= discount_variable.round(2)
+    end
+  end
+  cart 
 end
 
 def checkout(cart, coupons)
