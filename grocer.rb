@@ -43,8 +43,8 @@ def apply_clearance(cart)
   #update :price, :price -= discount_variable.round(2)
   #return updated cart
   
-  cart.map do |item|
-    #if item.values_at[:clearance]
+  cart.each do |item, value|
+    if value[]
       p item
       #discount_variable = item[:price] * 0.20 
       #item[:price] -= discount_variable.round(2)
