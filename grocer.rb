@@ -66,7 +66,15 @@ def checkout(cart, coupons)
   apply_coupons(updated_cart, coupons)
   apply_clearance(updated_cart)
   
-  updated_cart.reduce 
+  total = 0.00 
   
+  updated_cart.each do |item, value|
+    total += value[:price] * value[:count]
+  end
   
+  if total >= 100.00 
+    total_discount = total * 0.10
+    total -= total_discount.round(2)
+  end
+  total
 end
