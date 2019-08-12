@@ -53,5 +53,20 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # code here
+  #call consolidate_cart(cart)
+  #call apply_coupons(cart, coupons)
+  #call apply_clearance(cart)
+  #reduce :price to variable called total 
+  #check total >= 100.00
+  #if true, assign variable total_discount = total * 0.100
+  #update total -= total_discount.round(2)
+  #return total
+  
+  updated_cart = consolidate_cart(cart)
+  apply_coupons(updated_cart, coupons)
+  apply_clearance(updated_cart)
+  
+  updated_cart.reduce 
+  
+  
 end
